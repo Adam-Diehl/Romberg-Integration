@@ -23,15 +23,16 @@ ErrorBound (input 3) is optional manual error tolerance
     Default error tolerance is 1e-16
 
 Syntax:
-    >> Romberg(0,5)
+     
+    Romberg(0,5)
         2*x^2-sin(x) [[[When asked for function input]]]
-    >> Romberg(-1,3,1e-10)
+        
+    Romberg(-1,3,1e-10)
         3*x^-1
 
 Note 1: under slow convergence conditions (matrix size = 16x16 with current solution being at least 10^3*(Error Bound)) the function will terminate early and spit out a warning. This behavior can be modified at line 89.
-    
-    An example of a slowly converging function is:
-        sin(x^3-erf(x)*tan(x/2))+erf(sin(x)) from 0 to 10
-    This requires an 18x18 matrix to recover a solution, so setting the tolerance to n=18 would produce a solution (~1.9688...)
+
+An example of a slowly converging function is: sin(x^3-erf(x)*tan(x/2))+erf(sin(x)) from 0 to 10
+This requires an 18x18 matrix to recover a solution, so setting the tolerance to n=18 would produce a solution (~1.9688...)
     
 Note 2: The accuracy in the error approximation increases with the accuracy in the integral solution.
